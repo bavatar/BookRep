@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class Book {
     private String title = "";
     private String author = "";
@@ -70,6 +72,19 @@ public class Book {
 
     }
 
+    public double getPriceOfBooks1(ArrayList<String> bookList, ArrayList<Book> bArrayList){
+        //ArrayList<Double> outArray = new ArrayList<>();
+        double price = 0;
+        double totalPrice = 0;
+
+        for (Book b:bArrayList){
+            if (bookList.contains(b.getTitle())){
+                price = b.getPrice();
+                totalPrice += price;
+            }
+        }
+        return totalPrice;
+    }
 //    public void getDisplayText(){}    {
 //        String auth = author;
 //        String titl = title;
