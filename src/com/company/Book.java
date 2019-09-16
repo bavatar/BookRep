@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Book {
     private String title = "";
@@ -72,15 +73,21 @@ public class Book {
 
     }
 
-    public double getPriceOfBooks1(ArrayList<String> bookList, ArrayList<Book> bArrayList){
+    public static double getPriceOfBooks1(ArrayList<String> bookList, ArrayList<Book> bArrayList){
         //ArrayList<Double> outArray = new ArrayList<>();
         double price = 0;
         double totalPrice = 0;
+        int randomInStock = 0;
+        Random rnd = new Random();
+        boolean isInStock = false;
 
         for (Book b:bArrayList){
             if (bookList.contains(b.getTitle())){
-                price = b.getPrice();
-                totalPrice += price;
+                randomInStock = rnd.nextInt(100);
+                if (b.isInStock) {
+                    price = b.getPrice();
+                    totalPrice += price;
+                }
             }
         }
         return totalPrice;

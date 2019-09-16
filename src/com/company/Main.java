@@ -62,6 +62,16 @@ public class Main {
         String costStr = formatter.format(totalCost);
         System.out.println("Total Cost: " + costStr);
 
+
+        //public static double getPriceOfBooks1(ArrayList<String> bookList, ArrayList<Book> bArrayList){
+        System.out.println();
+        System.out.println("Calling Book Class Method");
+        System.out.println();
+
+        totalCost = Book.getPriceOfBooks1(bList, bookArrayList);
+        costStr = formatter.format(totalCost);
+        System.out.println("Total Cost: " + costStr);
+
         //book.getDisplayText();
         //getDisplayText(book);
     }
